@@ -11,8 +11,9 @@ bot_updater = Updater(token)
 
 def start_listen():
     """Begin listening"""
+    bot_updater.bot.set_webhook("https://xktkbot.herokuapp.com/")
     bot_updater.start_webhook(listen='0.0.0.0',
                               url_path=url,
                               port=port)
-    bot_updater.bot.set_webhook("https://xktkbot.herokuapp.com/")
+
 
