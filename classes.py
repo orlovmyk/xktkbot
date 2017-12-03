@@ -36,28 +36,24 @@ class User():
         self.first_name = first_name
         self.last_name = last_name
         self.username = '@' + username
-        self.time = None
-        self.info = None
-        self.phone = None
+        self.comment = ''
+        self.mark = 0
 
-    def add_time(self, time):
-        self.time = time
+    def add_comment(self, comment):
+        self.comment = comment
 
-    def add_info(self, info):
-        self.info = info
+    def add_mark(self, mark):
+        self.mark = mark
 
-    def add_phone(self, phone):
-        self.phone = phone
-
-    def get(self):
+    def show(self):
         res = """
 Username: {0}
 Имя: {1}
 Фамилия: {2}
 
-время: {3}
-пожелания: {4}
-контактная информация: {5}
+коммент: {3}
+оцiночка: {4}
 """.format(self.username, self.first_name, self.last_name,
-           self.time, self.info, self.phone)
+           self.comment, self.mark)
+
         return res
