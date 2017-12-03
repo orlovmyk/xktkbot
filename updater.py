@@ -2,9 +2,9 @@ from os import environ
 from telegram.ext import Updater
 
 
-port = environ.get('PORT', 443)
+port = environ.get('PORT', 5000)
 token = environ.get('BOT_TOKEN')
-url = environ.get('BOT_URL', '/')
+url = environ.get('BOT_URL', '')
 
 bot_updater = Updater(token)
 
