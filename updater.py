@@ -1,17 +1,12 @@
-"""
-The updater part of the bot
-Init server and some stuff
-"""
 from os import environ
 from telegram.ext import Updater
 
 
-port = environ.get('PORT', 5000)
+port = environ.get('PORT', 443)
 token = environ.get('BOT_TOKEN')
-url = environ.get('BOT_URL', '')
+url = environ.get('BOT_URL', '0.0.0.0')
 
 bot_updater = Updater(token=token)
-
 
 
 def start_listen():
