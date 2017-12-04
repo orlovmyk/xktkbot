@@ -11,9 +11,6 @@ import classes
 import constants
 import pyowm
 
-
-SKETCHES = classes.Sketches()
-SKETCHES.load()
 USERS = {}
 
 MAIN_MENU_MARKUP = ReplyKeyboardMarkup([['Текст доклада 📓', 'Геопозиция 🌎'],
@@ -148,17 +145,15 @@ def source(bot, update):
                               parse_mode='HTML')
 
 
-# SKETCHES PART
-def sketches_show(bot, update):
-    photo = SKETCHES.get_random()
-    update.message.reply_photo(photo=photo[1])
-    update.message.reply_text('Эскиз под номером ' + photo[0])
-
-
-def sketches_add(bot, update):
+# PHOTO PART
+def photo(bot, update):
     photo_id = update.message.photo[-1].file_id
-    SKETCHES.write(photo_id)
-    update.message.reply_text('Добавил фото в эскизы', quote=True)
+    update.message.reply_text(photo_id, quote=True)
+
+
+def photo_send(bot, update):
+    update.message.reply_photo(photo=random.choice(constants.photos))
+
 
 
 # RANDOM_FACT
@@ -256,7 +251,8 @@ bot_handlers = [CommandHandler('start', start),
                 RegexHandler('Геопозиция 🌎', location),
                 RegexHandler('Погода️ 🌤️', weather),
                 RegexHandler('Слайд [1-8]', report),
+                RegexHandler('Случайная картинка', photo_send),
 
                 MessageHandler(Filters.location, location_handler),
-                MessageHandler(Filters.photo, sketches_add),
+                MessageHandler(Filters.photo, photo),
                 conv_handler]

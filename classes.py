@@ -1,33 +1,6 @@
 """
 Just sketches load and write
 """
-import json
-from random import choice
-
-
-class Sketches():
-    def __init__(self):
-        self.photos = {}
-
-    def load(self):
-        with open('sketches.json', 'r') as f:
-            try:
-                self.photos = json.loads(f.read())
-            except json.JSONDecodeError:
-                self.photos = {}
-
-    def write(self, photo_id):
-        res = {str(len(self.photos)): photo_id}
-
-        self.photos.update(res)
-        with open('sketches.json', 'w') as f:
-            f.write(json.dumps(self.photos))
-
-    def get_random(self):
-        key = choice(list(self.photos.keys()))
-        return (key, self.photos[key])
-
-
 class User():
     def __init__(self, first_name, last_name, username):
         if not first_name: first_name = ''
