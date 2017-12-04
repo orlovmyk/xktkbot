@@ -15,7 +15,7 @@ USERS = {}
 
 MAIN_MENU_MARKUP = ReplyKeyboardMarkup([['Текст доклада 📓', 'Геопозиция 🌎'],
                                         ['Оставить коментарий 😡', 'Погода️ 🌤️'],
-                                        ['Исходники ℹ️', 'Случайный факт про доклад 🤔'],['Случайное фото']],
+                                        ['Исходники ℹ️', 'Случайный факт про доклад 🤔'],['Случайная картинка 🖼️']],
                                        resize_keyboard=True)
 MARK, CONTACT = range(2)
 
@@ -251,7 +251,7 @@ bot_handlers = [CommandHandler('start', start),
                 RegexHandler('Геопозиция 🌎', location),
                 RegexHandler('Погода️ 🌤️', weather),
                 RegexHandler('Слайд [1-8]', report),
-                RegexHandler('Случайная картинка', photo_send),
+                RegexHandler('Случайная картинка 🖼️', photo_send),
 
                 MessageHandler(Filters.location, location_handler),
                 MessageHandler(Filters.photo, photo),
