@@ -62,6 +62,7 @@ def main_menu(bot, update):
 
 # WEATHER
 def weather(bot, update):
+    """
     key = os.environ.get('OWM')
     owm = pyowm.OWM(key)
 
@@ -69,6 +70,16 @@ def weather(bot, update):
     w = observation.get_weather()
 
     temp = w.get_temperature('celsius')
+    w.get_wind()['speed']
+    w.get_humidity()),
+    """
+
+    temp = {"temp_max":1.0,
+            "temp_min":1.0,
+            "temp":1.0,
+            "humidity":80,
+            "speed":4}
+
     update.message.reply_text("""
 <b>ПОГОДА В ХАРЬКОВЕ</b>
 Температура:
@@ -78,7 +89,7 @@ def weather(bot, update):
 
 Скорость ветра: {3} м/с
 Облачность: {4} %
-""".format(temp['temp_min'], temp['temp'], temp['temp_max'], w.get_wind()['speed'], w.get_humidity()),
+""".format(temp['temp_min'], temp['temp'], temp['temp_max'], temp['speed'], temp['humidity']),
                               parse_mode='HTML')
 
 
