@@ -44,4 +44,11 @@ Cовместив удобный интерфейс программы  с ин�
 4. Цензура мессенджера """
 }
 
-photos = ['','']
+photos = ['AgADAgADE6kxG7Y6MUkYWZrYzFFVtz3hDw4ABBuZdo7OrOVLZpYDAAEC',
+          'AgADAgADFKkxG7Y6MUkqqk2J7vX4eb0QMw4ABKINZVyd2tKQ9DcBAAEC',
+          'AgADAgADFakxG7Y6MUlr7npEe-HzqFTkDw4ABOC2tsTodunNhJkDAAEC',
+          'AgADAgADFqkxG7Y6MUm25rtBE6pKurv7Mg4ABB1yYqWDO4kuDjwBAAEC',
+          'AgADAgADF6kxG7Y6MUlXhJshjqQIhRLEDw4ABO2-vO-UKMZOh48DAAEC',
+          'AgADAgADGKkxG7Y6MUlA2J3RMCnDmzrXDw4ABKofeV9QxS5EbJgDAAEC',
+          'AgADAgADGakxG7Y6MUk4zzCkRXUMJaoRMw4ABKNnHN1hx6L15zkBAAEC',
+          'AgADAgADGqkxG7Y6MUnZsMa0Qjtgo38TMw4ABEISIZzK1SjXLzwBAAEC']
