@@ -13,6 +13,9 @@ def start_listen():
     """Begin listening"""
     #bot_updater.bot.set_webhook("https://xktkbot.herokuapp.com/")
     bot_updater.start_webhook(url_path=url,
-                              port=port)
+                              port=port,
+                              listen='0.0.0.0')
+    bot_updater.bot.set_webhook("https://xktkbot.herokuapp.com/")
+    bot_updater.idle()
 
 
