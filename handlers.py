@@ -53,7 +53,7 @@ def start(bot, update):
 
 
 def main_menu(bot, update):
-    update.message.reply_text('Главное меню...',
+    update.message.reply_text('Главное меню',
                               reply_markup=MAIN_MENU_MARKUP)
 
 
@@ -72,8 +72,8 @@ def weather(bot, update):
     """
 
     temp = {"temp_max":1.0,
-            "temp_min":1.0,
-            "temp":1.0,
+            "temp_min": -2.1,
+            "temp":0.2,
             "humidity":80,
             "speed":4}
 
@@ -94,7 +94,10 @@ def weather(bot, update):
 def location(bot, update):
     markup = ReplyKeyboardMarkup([[KeyboardButton('Мое местоположение',request_location=True)],['Главное меню']],
                                  resize_keyboard=True)
-    update.message.reply_text('Координаты или жизнь!', reply_markup=markup)
+    update.message.reply_text('Нажмите <b>"Мое местоположение"</b> пожалуйста\n'
+                              'Я посчитаю расстояние от вас до ХКТК )',
+                              reply_markup=markup,
+                              parse_mode='HTML')
 
 
 def location_calculate(lt1, lng1, lt2, lng2):
@@ -139,7 +142,7 @@ def location_handler(bot, update):
 # SOURCE
 def source(bot, update):
     update.message.reply_text('ОТКРЫТРЫЙ ИСХОДНЫЙ КОД!!!11!\n'
-                              'ЭТО ЖЕ ПРЯМ <b>GNU</b> !!11!\n'
+                              'ЭТО ЖЕ ПРЯМ ПО <b>GNU</b> !!11!\n'
                               'https://github.com/orlovw/xktkbot',
                               reply_markup=MAIN_MENU_MARKUP,
                               parse_mode='HTML')
