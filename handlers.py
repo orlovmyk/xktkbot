@@ -198,17 +198,16 @@ def contact(bot, update):
     try:
         text = int(text)
     except ValueError:
-        update.message.reply_text('Оценка должна быть числом (ну к примеру 1)\n'
-                                  'Арабскими цифрами слево направо (дискретная система исчелсления,'
-                                  ' можно дробное число(это не баг а фича!))')
+        update.message.reply_text('Оценка должна быть числом (ну к примеру 1,2,3)\n'
+                                  'Арабскими цифрами слево направо (число натуральное, в пределах [0,12])')
         return CONTACT
 
     if text > 12:
-        update.message.reply_text('А у вас число больше 12, в курсе?)')
+        update.message.reply_text('Число больше 12\nПопробуйте еще раз)')
         return CONTACT
 
     if text < 0:
-        update.message.reply_text('А у вас число отрицательное, в курсе?)')
+        update.message.reply_text('Число меньше 0\nПопробуйте еще раз)')
         return CONTACT
 
     user = USERS.get(chat_id)
